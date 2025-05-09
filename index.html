@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link src="new.js" defer ></link>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Professional Style with Chatbot</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background-color: #FFC0CB;
+            /* baby pink solid background */
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color: #222;
+            margin: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            position: relative;
+            background-color: transparent;
+            box-shadow: none;
+        }
+        header img.logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0 auto;
+            padding-left: 140px; /* to avoid overlap with larger logo */
+            font-size: 1.5rem;
+            color: #333;
+        }
+        header .about-us {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            user-select: none;
+            color: #555;
+        }
+        .intro-text {
+            margin: 140px 20px 20px 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.6;
+            color: #333;
+            background: #f0f4f8;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            text-align: center;
+            user-select: none;
+        }
+        .body-types {
+            margin: 40px 20px;
+        }
+        .body-types h2 {
+            text-align: center;
+        }
+        .body-types-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .body-type {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 2px solid rgba(44, 62, 80, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .body-type:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .body-type img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+        .body-type p {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #111;
+        }
+        .skin-tones {
+            margin: 40px 20px;
+        }
+        .skin-tones h2 {
+            text-align: center;
+        }
+        .skin-tones-container {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .skin-tone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .skin-tone:nth-child(even) {
+            flex-direction: column;
+        }
+        .skin-tone-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+        .skin-tone p {
+            margin: 0;
+
+        }
+        .chat-textbox-container {
+            display: flex;
+            align-items: center;
+            max-width: 400px;
+            margin: 20px auto 120px auto;
+        }
+        .chat-textbox-container input[type="text"] {
+            flex-grow: 1;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 20px;
+            border: 1px solid #2c3e50;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            outline: none;
+        }
+        .chat-textbox-container button {
+            background-color: #2c3e50;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .chat-textbox-container button svg {
+            fill: white;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="width: 100%; text-align: center; margin: 0; font-size: 2rem; font-weight: bold; color: #333;">Fashionista</h1>
+        <img src="logo.jpeg" alt="Logo" class="logo" />
+    
+        <div class="about-us">About us</div>
+    </header>
+
+    <div class="intro-text">
+        Meet your new style BFF – our AI Fashion Advisor serves up personalized outfit inspo tailored to your vibe, body type, and occasion. Smart, stylish, and always on-trend – fashion advice has never looked this good! 
+        Where your personal style matters.  We'll help you discover the perfect pieces to flatter your unique shape and express your individuality.  From classic chic to trendy edge, we've got you covered. Explore our curated collections, style guides, and personalized recommendations to unlock your best look yet.  Start your fashion journey with us today!
+    </div>
+
+    <div class="chat-textbox-container">
+        <input type="text" placeholder="Chat with us..." aria-label="Chat with us text box" />
+        <button aria-label="Send message" onclick="window.open('https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/09/16/20250509164147-DM4TVLMX.json', '_blank')">
+            <svg xmlns="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/09/16/20250509164147-DM4TVLMX.json" viewBox="0 0 24 24" fill="white">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+            </svg>
+        </button>
+    </div>
+    <br>
+    <section class="body-types">
+        <h2>Body Types</h2>
+        <div class="body-types-container">
+            <div class="body-type">
+                <img src="rectangle.jpeg" alt="Rectangle Body Type" />
+                <p>Rectangle: Balanced bust and hips with a less defined waist. This body type often has a straight silhouette with minimal curves.</p>
+            </div>
+            <div class="body-type">
+                <img src="hourglass.jpeg" alt="Hourglass Body Type" />
+                <p>Hourglass: Well-defined waist with balanced bust and hips. This shape is characterized by a curvy silhouette with a narrow waist.</p>
+            </div>
+            <div class="body-type">
+                <img src="pear.jpeg" alt="Pear Body Type" />
+                <p>Pear: Hips wider than bust with a defined waist. This body type typically has a smaller upper body and fuller hips and thighs.</p>
+            </div>
+            <div class="body-type">
+                <img src="apple.jpeg" alt="Apple Body Type" />
+                <p>Apple: Bust wider than hips with less defined waist. This shape often features a fuller midsection and slimmer legs.</p>
+            </div>
+            <div class="body-type">
+                <img src="inverted triangle.jpeg" alt="Inverted Triangle Body Type" />
+                <p>Inverted Triangle: Broad shoulders with narrower hips. This body type has a wider upper body and a more tapered lower body.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skin-tones">
+        <h2>Skin Tones</h2>
+        <div class="skin-tones-container">
+            <div class="skin-tone">
+                <div class="skin-tone-icon" style="background-color: #f9d5b3;"></div>
+                <p>Light</p>
+            </div>
+            <div class="skin-tone">
+                <div class="skin-tone-icon" style="background-color: #f1c27d;"></div>
+                <p>Fair</p>
+            </div>
+            <div class="skin-tone">
+                <div class="skin-tone-icon" style="background-color: #e0ac69;"></div>
+                <p>Medium</p>
+            </div>
+            <div class="skin-tone">
+                <div class="skin-tone-icon" style="background-color: #c68642;"></div>
+                <p>Olive</p>
+            </div>
+            <div class="skin-tone">
+                <div class="skin-tone-icon" style="background-color: #8d5524;"></div>
+                <p>Brown</p>
+            </div>
+            <div class="skin-tone">
+                <div class="skin-tone-icon" style="background-color: #5a3d1b;"></div>
+                <p>Dark</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const chatInput = document.querySelector('.chat-textbox-container input[type="text"]');
+        const sendBtn = document.querySelector('.chat-textbox-container button');
+        let varInput = '';
+
+        sendBtn.addEventListener('click', () => {
+            varInput = chatInput.value;
+            window.open('https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/09/16/20250509164147-DM4TVLMX.json', '_blank');
+        });
+    </script>
+    <script src="https://files.bpcontent.cloud/2025/05/09/16/20250509164146-KAEPO7CV.js"></script>
+</body>
+</html>
